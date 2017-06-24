@@ -8,12 +8,12 @@
     "engines": {
         "node": ">=6.9.1"
     },
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "express": "*",
+        "jade": "^1.11.0"
+    },
     "scripts": {
         "start": "node index.js"
-    },
-    "devDependencies": {
-      "body-parser": "^1.17.2",
-      "express": "*",
-      "jade": "^1.11.0"
     }
 }
