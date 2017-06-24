@@ -2,7 +2,7 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-app.set('views', __dirname + '\views');
+app.set('views', __dirname + '¥views');
 app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
