@@ -12,7 +12,7 @@
     $(function() {
 
       
-      setTimeout("messageIn()", 3000);
+      setTimeout("messageIn()", 2000);
 
     });
   }
@@ -32,9 +32,6 @@
             .fail(function (XMLHttpRequest, textStatus, errorThrown) { alert("error")} );
   </script>
   <style type="text/css">
-    .jumbotron{
-      background-color:#aa9
-    }
     #message{
       display: none;
     }
@@ -48,17 +45,164 @@
       width: 200px;
       height: 200px;
     }
+    .thumbnail img{
+      border-radius: 20px;
+      height: 40px;
+      width: 40px;
+    }
+    p {
+      text-align: left
+    }
   </style>
 </head>
   <body>
   <div id="loading"><img src="./img/gif-load.gif"></div>
     <div id="message">
-      <div class="jumbotron">
-      </div>
-      <div class="jumbotron">
-      </div>
-      <div class="jumbotron">
-      </div>
+      <table class="table table-striped">
+        <th class="col-md-1">
+        </th>
+        <th class="col-md-2">
+          ジャンル
+        </th>
+        <th class="col-md-1">
+          日付
+        </th>
+        <th class="col-md-5">
+          <p>本文</p>
+        </th>
+        <th class="col-md-2">
+          タグ
+        </th>
+        <th class="col-md-1">
+          担当者
+        </th>
+
+        <tr>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            営業
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            AAA社に、6月30日までに営業にいく。<br>うちの新サービスXXXに興味ありそうです。<br>担当者は佐藤さんです。
+          </td>
+          <td>
+          うち, 興味, サービスXXX, 担当者, AAA社, 佐藤            
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            ITエンジニア(システム開発・SEインフラ)
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            CCC社の案件で、ウェブサービスの開発が遅延しています。<br>UIのデザインをやってほしいです。<br>7月10日までに納入してください。
+          </td>
+          <td>          
+          ウェブサービス, 案件, ほしい, 遅延, 開発, CCC社, C#  
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            ITエンジニア(システム開発・SEインフラ)
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            BBBプロジェクトのデータベース関連の仕様書作成をできるかた、お願いします。<br>急ぎです。1週間以内で。<br>詳細は斉藤まで。
+          </td>
+          <td>
+            仕様書作成, データベース関連, BBBプロジェクト, 以内, 詳細, 斉藤            
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            事務・管理
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            トイレが詰まりました。助けて。。。
+          </td>
+          <td> 
+          トイレ, 助け          
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            事務・管理
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            CCC案件です。コーディングお願いします
+          </td>
+          <td>   
+          CCC案件, コーディング         
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
+
+      </table>
     </div>
   </body>
 </html>
