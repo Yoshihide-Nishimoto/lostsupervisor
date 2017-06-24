@@ -16,12 +16,12 @@ app.use(express.static(path.join(__dirname,'public')));
 
 //});
 
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 1338;
 //server.listen(port);
 
 app.get('/', function (req, res) {
   console.log("ここまでOK");
-  res.render('index', { title: 'APIサンプル', message:'aasdfsdf'});
+  res.render('index', { title: 'APIサンプル'});
 });
 
 app.listen(port,function(){

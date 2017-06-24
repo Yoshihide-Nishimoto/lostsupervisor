@@ -7,12 +7,58 @@
     <script type="text/javascript" src="./A3RT/A3RT_SDK.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
-  a3rt_text_classification("DtmErtQG0TzyOQ0LNZDGHaRpmNrb5Khs", "default", "システムの企画から開発・運用まで幅広く関われます。")
-            .done(function(json){ alert(json) })
+  var mail_content,sender,title;
+  window.onload = function(){
+    $(function() {
+
+      
+      setTimeout("messageIn()", 3000);
+
+    });
+  }
+  function messageIn(){
+    $("#loading").fadeOut();
+    $("#message").fadeIn();
+  }
+
+  mail_content = "システムの企画から開発・運用まで幅広く関われます。";
+  a3rt_text_classification("DtmErtQG0TzyOQ0LNZDGHaRpmNrb5Khs", "default", mail_content)
+            .done(function(json){ 
+              $(function() {
+                $('#message').append(JSON.stringify(json.classes[0]["label"]));
+                
+              });
+            })
             .fail(function (XMLHttpRequest, textStatus, errorThrown) { alert("error")} );
   </script>
-  </head>
+  <style type="text/css">
+    .jumbotron{
+      background-color:#aa9
+    }
+    #message{
+      display: none;
+    }
+    #loading{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
   <body>
-    
+  <div id="loading"><img src="./img/gif-load.gif"></div>
+    <div id="message">
+      <div class="jumbotron">
+      </div>
+      <div class="jumbotron">
+      </div>
+      <div class="jumbotron">
+      </div>
+    </div>
   </body>
 </html>
