@@ -20,8 +20,13 @@ var port = process.env.PORT || 1338;
 //server.listen(port);
 
 app.get('/', function (req, res) {
-  console.log("ここまでOK");
+  console.log("root");
   res.render('index', { title: 'APIサンプル'});
+});
+
+app.get('/chart', function (req, res) {
+  console.log("chart");
+  res.render('chart');
 });
 
 app.listen(port,function(){

@@ -10,32 +10,40 @@
   var mail_content,sender,title;
   window.onload = function(){
     $(function() {
-
-      
       setTimeout("messageIn()", 2000);
-
     });
   }
   function messageIn(){
     $("#loading").fadeOut();
     $("#message").fadeIn();
   }
+  function newMessage(){
+    $("#newmessage_loading").fadeOut();
+    $('#hiddentr').css("display","");
+  }
 
-  mail_content = "システムの企画から開発・運用まで幅広く関われます。";
-  a3rt_text_classification("DtmErtQG0TzyOQ0LNZDGHaRpmNrb5Khs", "default", mail_content)
-            .done(function(json){ 
-              $(function() {
-                $('#message').append(JSON.stringify(json.classes[0]["label"]));
-                
-              });
-            })
-            .fail(function (XMLHttpRequest, textStatus, errorThrown) { alert("error")} );
+  $(function() {
+    $('#hiddenbtn').click(function() {
+      $("#newmessage_loading").css('display','block');
+      setTimeout("newMessage()", 1000);
+    });
+  });
   </script>
   <style type="text/css">
     #message{
       display: none;
     }
     #loading{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+    }
+    #newmessage_loading{
       position: absolute;
       top: 0px;
       right: 0px;
@@ -59,7 +67,7 @@
   <div id="loading"><img src="./img/gif-load.gif"></div>
     <div id="message">
       <table class="table table-striped">
-        <th class="col-md-1">
+        <th class="col-md-1" id="hiddenbtn">
         </th>
         <th class="col-md-2">
           ジャンル
@@ -165,31 +173,6 @@
           2017/06/23
           </td>
           <td>
-            トイレが詰まりました。助けて。。。
-          </td>
-          <td> 
-          トイレ, 助け          
-          </td>
-          <td>
-            <div class="thumbnail">
-              <img src="./img/face.jpg">
-            </div> 
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <div class="thumbnail">
-              <img src="./img/face.jpg">
-            </div> 
-          </td>
-          <td>
-            事務・管理
-          </td>
-          <td>
-          2017/06/23
-          </td>
-          <td>
             CCC案件です。コーディングお願いします
           </td>
           <td>   
@@ -202,7 +185,32 @@
           </td>
         </tr>
 
+        <tr id="hiddentr" style="display:none">
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+          <td>
+            事務・管理
+          </td>
+          <td>
+          2017/06/23
+          </td>
+          <td>
+            トイレが詰まりました。助けて。。。
+          </td>
+          <td> 
+          トイレ, 助け          
+          </td>
+          <td>
+            <div class="thumbnail">
+              <img src="./img/face.jpg">
+            </div> 
+          </td>
+        </tr>
       </table>
     </div>
+    <div id="newmessage_loading" style="display:none"><img src="./img/gif-load.gif"></div>
   </body>
 </html>
