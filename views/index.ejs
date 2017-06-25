@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
     <script type="text/javascript" src="./A3RT/A3RT_SDK.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cc.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
   <script>
-  var mail_content,sender,title;
   window.onload = function(){
     $(function() {
-      setTimeout("messageIn()", 2000);
+      setTimeout("messageIn()", 1000);
     });
   }
   function messageIn(){
@@ -61,9 +62,50 @@
     p {
       text-align: left
     }
+
+    .globalNav {
+    list-style: none;
+    overflow: hidden;
+}
+ 
+.globalNav li {
+    float: left;
+    border-right: 1px solid #DDD;
+}
+ 
+.globalNav li a {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+ 
+.globalNav li a span {
+    display: block;
+    margin: 3px 0 0 0;
+    color: #AAA;
+    text-transform: uppercase;
+    font-size: 80%;
+    letter-spacing: 1px;
+}
+ 
+.globalNav li a:hover {
+    background: #EEE;
+}
+ 
+.globalNav li.active a {
+    background: #333;
+    color: #EEE;
+}
   </style>
 </head>
   <body>
+  <img src="./img/nobunaga.jpg">
+  <ul id="menu" class="globalNav">
+    <li class="active"><a href="/">タスク</a></li>
+    <li><a href="/chart" id="clickChart">達成度</a></li>
+  </ul>
   <div id="loading"><img src="./img/gif-load.gif"></div>
     <div id="message">
       <table class="table table-striped">
