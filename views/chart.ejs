@@ -56,32 +56,20 @@
     background: #333;
     color: #EEE;
 }
-.center{
-  width: 1000px;
-  margin: 0 auto;
-}
-#chat_display{
-  width:1000px;
-}
-#chart {
-  top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 </style>
     
 </head>
 
 <body>
-  <img src="./img/nobunaga.jpg">
+  <img src="./img/nobunaga.jpg" style="width:300px;padding: 10px 15px;">
   <ul id="menu" class="globalNav">
+  
   <li><a href="/">タスク</a></li>
   <li class="active"><a href="/chart">達成度</a></li>
   </ul>
-  <div class="center">
-    <div style="width: 50%" id="chat_display">
-        <canvas id="chart" ></canvas>
+  <div>
+    <div style="width: 50%">
+        <canvas id="chart" height="400" width="500" style="margin: center"></canvas>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
   </div>
