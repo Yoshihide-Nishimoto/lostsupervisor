@@ -9,6 +9,7 @@ var config = {
     encrypt: true // Use this if you're on Windows Azure
   }
 }
+mssql.close();
 mssql.connect(config, function(err) {
   console.log(err);
   mssql.close();
