@@ -9,10 +9,10 @@ var config = {
     encrypt: true // Use this if you're on Windows Azure
   }
 }
-
-
-
-
+mssql.connect(config, function(err) {
+  console.log(err);
+  mssql.close();
+});
 var http = require('http');
 var express = require('express');
 var path = require('path');
@@ -45,18 +45,11 @@ app.get('/chart', function (req, res) {
 });
 
 app.get('/connectsql', function (req, res) {
-  var dbConn = new mssql.Connection(config);
-  dbConn.connect().then(function (){
-    var request = new mssql.Request(dbConn);
-    request.query("select * from onoue").then(function (recordSet) {
-      console.log(recordSet);
-      dbConn.close();
-    }).catch(function (err) {
-      console.log(err);
-      dbConn.close();
-    }).catch(function (err) {
-      console.log(err);
-    });
+  var request = new mssql.Request(); 
+  console.log("connecting...");
+  request.query('select * from onoue',function(err,recordset) {
+    if(err) console.log(err)
+    console.log(recordset);
   });
 });
 
