@@ -9,7 +9,6 @@ var config = {
     encrypt: true // Use this if you're on Windows Azure
   }
 }
-mssql.close();
 mssql.connect(config, function(err) {
   console.log(err);
   mssql.close();
@@ -31,11 +30,6 @@ app.use(express.static(path.join(__dirname,'public')));
 //    response.end("Hello Azure!!");
 
 //});
-
-mssql.connect(config, function(err) {
-  console.log(err);
-  mssql.close();
-});
 
 var port = process.env.PORT || 1338;
 //server.listen(port);
