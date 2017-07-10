@@ -48,6 +48,7 @@ app.get('/connectsql', function (req, res) {
   var request = new mssql.Request(); 
   console.log("connecting...");
   request.query('select * from onoue');
+  console.log("connecting......");
   request.on('done', function(returnValue) {
         console.log(returnValue);
   })
