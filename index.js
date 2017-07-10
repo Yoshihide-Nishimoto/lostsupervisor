@@ -1,3 +1,14 @@
+var mssql = require('mssql');
+var config = {
+  user: 'wbuser',
+  password: 'Hide0313',
+  server: 'wbcompnay-sample.database.windows.net', // You can use 'localhost\\instance' to connect to named instance
+  database: 'wb-sqldb',
+  stream: true, // You can enable streaming globally
+  options: {
+    encrypt: true // Use this if you're on Windows Azure
+  }
+}
 var http = require('http');
 var express = require('express');
 var path = require('path');
@@ -16,6 +27,11 @@ app.use(express.static(path.join(__dirname,'public')));
 
 //});
 
+mssql.connect(config, function(err) {
+  console.log(err);
+  mssql.close();
+});
+
 var port = process.env.PORT || 1338;
 //server.listen(port);
 
@@ -27,6 +43,14 @@ app.get('/', function (req, res) {
 app.get('/chart', function (req, res) {
   console.log("chart");
   res.render('chart');
+});
+
+app.get('/connectsql', function (req, res) {
+  console.log("connecting...");
+  request.query('select * from onoue');
+  request.on('done', function(returnValue) {
+        console.log(returnValue);
+  })
 });
 
 app.listen(port,function(){
