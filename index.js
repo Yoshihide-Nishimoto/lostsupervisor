@@ -46,6 +46,7 @@ app.get('/chart', function (req, res) {
 });
 
 app.get('/connectsql', function (req, res) {
+  var request = new mssql.Request(); 
   console.log("connecting...");
   request.query('select * from onoue');
   request.on('done', function(returnValue) {
