@@ -9,6 +9,10 @@ var config = {
     encrypt: true // Use this if you're on Windows Azure
   }
 }
+mssql.connect(config, function(err) {
+  console.log(err);
+  mssql.close();
+});
 var http = require('http');
 var express = require('express');
 var path = require('path');
